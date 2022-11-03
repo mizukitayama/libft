@@ -1,0 +1,6 @@
+#ignore
+
+a.out
+*.o
+test.c
+libft.h.gch
