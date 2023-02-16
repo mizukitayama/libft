@@ -76,7 +76,7 @@ char	**append_arr(char const *s, char c, char **splitted, size_t	words)
 		while (s[i] == c)
 			i++;
 		len = count_strlen(s, c, i);
-		splitted[j] = ft_substr(s, i + 1, len);
+		splitted[j] = ft_substr(s, i, len);
 		if (splitted[j] == NULL)
 		{
 			free_arr(splitted);
@@ -109,15 +109,15 @@ char	**ft_split(char const *s, char c)
 	return (splitted);
 }
 
-#include <stdio.h>
-void print(const char *s, char c)
-{
-	char	**splitted = ft_split(s, c);
-	for (int i = 0; splitted[i]; i++)
-	{
-		printf("%s\n", splitted[i]);
-	}
-}
+// #include <stdio.h>
+// void print(const char *s, char c)
+// {
+// 	char	**splitted = ft_split(s, c);
+// 	for (int i = 0; splitted[i]; i++)
+// 	{
+// 		printf("%s\n", splitted[i]);
+// 	}
+// }
 // int main()
 // {
 // 	const char	*s1 = "12a34aaaaa567aaaaaa890aa";
@@ -131,8 +131,6 @@ void print(const char *s, char c)
 // 	print(s1, c1);
 // 	puts("\n(s2, c2):");
 // 	print(s2, c2);
-// 	puts("\n(s3, c3): (not printing)");
-// 	ft_split(s3, c3);
 // 	puts("\n(s1, c3):");
 // 	print(s1, c3);
 // 	puts("\n");

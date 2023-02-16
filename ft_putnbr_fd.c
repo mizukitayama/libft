@@ -1,18 +1,34 @@
 #include "libft.h"
-
-void	ft_putnbr_fd(int n, int fd)
+void write_nbr(int n, int fd)
 {
-	char	*str;
-	size_t	i;
+	if (n > 10)
+	{
+		write_nbr(n / 10, fd);
+	}
+	write(fd, &"0123456789"[n % 10], 1);
+	return;
+}
 
-	i = 0;
-	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
+void ft_putnbr_fd(int n, int fd)
+{
+	if (fd < 0)
+		return;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	write_nbr(n, fd);
 }
 
 // int main()
 // {
-// 	int n1 = 12345;
+// 	int n1 = -2143648986;
 // 	int fd = 1;
 // 	ft_putnbr_fd(n1, fd);
 // }

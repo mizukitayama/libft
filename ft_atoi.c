@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-long	mon_atoi(char *nptr, long i)
+long my_atoi(char *nptr, long i)
 {
 	while (*nptr && ft_isdigit(*nptr))
 	{
@@ -24,23 +24,31 @@ long	mon_atoi(char *nptr, long i)
 	return (i);
 }
 
-int	ft_atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	int		sign;
-	long	i;
+	int sign;
+	long i;
 
 	sign = 0;
 	i = 0;
+	while(!ft_isdigit(*nptr) && *nptr != '-' && *nptr != '+')
+	{
+		if (*nptr == '\e')
+		{
+			return (0);
+		}
+		nptr++;
+	}
 	if (*nptr == '-')
 	{
 		sign = 1;
 		nptr++;
 	}
-	else if (*nptr == '+')
+	while (*nptr == '+')
 	{
 		nptr++;
 	}
-	i = mon_atoi((char *)nptr, i);
+	i = my_atoi((char *)nptr, i);
 	if (sign == 1)
 		i *= -1;
 	return (i);
@@ -56,4 +64,7 @@ int	ft_atoi(const char *nptr)
 // 	printf("%d\n", ft_atoi("100"));
 // 	printf("%d\n", ft_atoi("12345"));
 // 	printf("%d\n", ft_atoi("2147483647"));
+// 	printf("%d\n", ft_atoi(""));
+// 	printf("%d\n", ft_atoi(" \t\v\f\r\n \f1  "));
+// 	printf("%d\n", atoi(" \e-54431  "));
 // }

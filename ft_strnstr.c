@@ -22,6 +22,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_needle = 0;
 	while (needle[size_needle])
 		size_needle++;
+	if (size_needle == 0)
+	{
+		return ((char *)haystack);
+	}
+	if (len == 0)
+	{
+		return (NULL);
+	}
 	while (haystack[i] && (len - size_needle + 1) > i)
 	{
 		j = 0;
@@ -33,5 +41,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	printf("%s", strnstr("see FF your FF return FF now FF", "FF", 10));
+// }

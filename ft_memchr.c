@@ -19,8 +19,6 @@ void	*ft_memchr(const void *buf, int ch, size_t n)
 
 	buf_cp = (unsigned char *)buf;
 	i = 0;
-	if (buf == NULL || n <= 0)
-		return (0);
 	while (i < n)
 	{
 		if (buf_cp[i] == (unsigned char) ch)
@@ -33,15 +31,17 @@ void	*ft_memchr(const void *buf, int ch, size_t n)
 }
 
 // #include <stdio.h>
+// #include <string.h>
 // int main()
 // {
 // 	puts("\nft_memchr-----\n");
 // 	void *buf1 = "abcdef\0hijk";
 // 	void *buf2 = NULL;
-// 	printf("(buf1. 'h', 10):%s\n", (char *)ft_memchr(buf1, 'h', 10));
-// 	printf("(buf1. '\\0', 10):%s\n", (char *)ft_memchr(buf1, '\0', 10));
-// 	printf("(buf1. 'l', 10):%s\n", (char *)ft_memchr(buf1, 'l', 10));
-// 	printf("(buf1. 'h', 5):%s\n", (char *)ft_memchr(buf1, 'h', 5));
-// 	printf("(buf1. 'h', 0):%s\n", (char *)ft_memchr(buf1, 'h', 0));
-// 	printf("(buf2. 'h', 10):%s\n", (char *)ft_memchr(buf2, 'h', 10));
+// 	printf("(buf1, 'h', 10):%s\n", (char *)ft_memchr(buf1, 'h', 10));
+// 	printf("(buf1, '\\0', 10):%s\n", (char *)ft_memchr(buf1, '\0', 10));
+// 	printf("(buf1, 'b', 10):%s\n", (char *)ft_memchr(buf1, 'b', 10));
+// 	printf("(buf1, 'l', 10):%s\n", (char *)ft_memchr(buf1, 'l', 10));
+// 	printf("(buf1, 'h', 5):%s\n", (char *)ft_memchr(buf1, 'h', 5));
+// 	printf("(buf1, 'h', 0):%s\n", (char *)ft_memchr(buf1, 'h', 0));
+// 	printf("(buf2, 'h', 10):%s\n", (char *)ft_memchr(buf2, 'h', 10));
 // }

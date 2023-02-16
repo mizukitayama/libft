@@ -11,8 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	count_len(int n, int accumulator)
+int count_len(int n, int accumulator)
 {
+	if (n < 0)
+	{
+		n *= -1;
+	}
 	if (n < 10)
 	{
 		return (accumulator + 1);
@@ -23,10 +27,10 @@ int	count_len(int n, int accumulator)
 	}
 }
 
-void	convert_int_to_str(int n, char *str)
+void convert_int_to_str(int n, char *str)
 {
-	int	i;
-	int	n_cp;
+	int i;
+	int n_cp;
 
 	i = 0;
 	n_cp = n / 10;
@@ -41,21 +45,28 @@ void	convert_int_to_str(int n, char *str)
 	str[i + 1] = '\0';
 }
 
-char	*ft_itoa(int n)
+char *ft_itoa(int n)
 {
-	size_t	i;
-	size_t	len;
-	char	*str;
-	int		flag;
+	size_t i;
+	size_t len;
+	char *str;
+	int flag;
 
-	i = 0;
-	flag = 0;
-	len = count_len(n, 0);
-	str = malloc(sizeof(char) * len);
-	if (str == 0)
-		return (0);
 	if (n != -2147483648)
 	{
+		i = 0;
+		flag = 0;
+		len = count_len(n, 0);
+		if (n < 0)
+		{
+			str = malloc(sizeof(char) * (len + 2));
+		}
+		else
+		{
+			str = malloc(sizeof(char) * (len + 1));
+		}
+		if (str == 0)
+			return (0);
 		if (n < 0)
 		{
 			flag = 1;
@@ -63,19 +74,26 @@ char	*ft_itoa(int n)
 			n *= -1;
 		}
 		convert_int_to_str(n, str + flag);
-		return (str);
 	}
-	return ("-2147483648");
+	else
+	{
+		str = malloc(sizeof(char) * 12);
+		ft_strlcpy(str, "-2147483648", 12);
+	}
+	return (str);
 }
 
 // #include <stdio.h>
 // int main()
 // {
 // 	puts("\nft_itoa-----\n");
-// 	printf("%s\n", ft_itoa(-2147483648));
-// 	printf("%s\n", ft_itoa(-100));
-// 	printf("%s\n", ft_itoa(0));
-// 	printf("%s\n", ft_itoa(100));
-// 	printf("%s\n", ft_itoa(12345));
-// 	printf("%s\n\n", ft_itoa(2147483647));
+// 	char* min = ft_itoa(-2147483648);
+// 	printf("%s\n", min);
+// 	free(min);
+// 	// printf("%s\n", ft_itoa(-100));
+// 	// printf("%s\n", ft_itoa(0));
+// 	// printf("%s\n", ft_itoa(100));
+// 	// printf("%s\n", ft_itoa(12345));
+// 	// printf("%s\n\n", ft_itoa(2147483647));
+// 	// printf("%s\n", ft_itoa(-12345));
 // }

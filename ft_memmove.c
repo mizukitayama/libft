@@ -18,12 +18,16 @@ void	*ft_memmove(void *buf1, const void *buf2, size_t n)
 	unsigned char	*c_buf2;
 	size_t			i;
 
+	if ((buf1 == NULL && buf2 == NULL) || !n)
+	{
+		return (buf1);
+	}
 	c_buf1 = (unsigned char *)buf1;
 	c_buf2 = (unsigned char *)buf2;
 	i = 0;
 	if (buf1 < buf2)
 	{
-		while (i < n)
+		while (n > i)
 		{
 			c_buf1[i] = c_buf2[i];
 			i++;
@@ -31,7 +35,7 @@ void	*ft_memmove(void *buf1, const void *buf2, size_t n)
 	}
 	else
 	{
-		while (i < n)
+		while (n > i)
 		{
 			c_buf1[n - i - 1] = c_buf2[n - i - 1];
 			i++;

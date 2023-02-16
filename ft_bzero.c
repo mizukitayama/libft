@@ -12,27 +12,28 @@
 
 #include "libft.h"
 
+//your bzero does not segfault when null params is sent
+// -> removed if(!s){return ;}...
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*s_cpy;
+	unsigned char	*p;
+	size_t 			i;
 
+	p = s;
 	i = 0;
-	s_cpy = (unsigned char *)s;
-	if (s_cpy == NULL || n == 0)
-		return ;
-	while (i < n && *s_cpy)
+	while (n > i)
 	{
-		*s_cpy = 0;
-		s_cpy++;
-		i++;
+		*p++ = 0;
+		i ++;
 	}
 }
 
+
 // #include <stdio.h>
+// #include <strings.h>
 // int main()
 // {
-//	puts("\nft_bzero-----\n");
+// 	puts("\nft_bzero-----\n");
 // 	char buf1[] = "1234567890";
 // 	char *buf2	= NULL;
 // 	ft_bzero(buf1+5, 3);

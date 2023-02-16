@@ -21,7 +21,7 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	buf1_cp = (unsigned char *)buf1;
 	buf2_cp = (unsigned char *)buf2;
 	i = 0;
-	if(buf1_cp == NULL || buf2_cp == NULL || n <= 0)
+	if(n <= 0)
 		return (0);
 	while (i < n)
 	{
@@ -37,16 +37,14 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	return (0);
 }
 
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	puts("\nft_memcmp-----\n");
-	printf("ft_memcmp(ABC12\\n567, ABC12\\n567, 7):%d\n", ft_memcmp("ABC12\n567", "ABC12\n567", 7));
-
-	printf("ft_memcmp(ABC12\\n456, ABC12\\n567, 7):%d\n", ft_memcmp("ABC12\n456", "ABC12\n567", 7));
-	printf("memcmp(ABC12\\n456, ABC12\\n567, 7):%d\n", memcmp("ABC12\n456", "ABC12\n567", 7));
-
-	printf("ft_memcmp(ABC12\\n956, ABC12\\n567, 6):%d\n", ft_memcmp("ABC12\n956", "ABC12\n567", 6));
-	printf("memcmp(ABC12\\n956, ABC12\\n567, 6):%d\n", memcmp("ABC12\n956", "ABC12\n567", 6));
-}
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+// 	puts("\nft_memcmp-----\n");
+// 	printf("ft_memcmp(ABC12\\n567, ABC12\\n567, 7):%d\n", ft_memcmp("ABC12\n567", "ABC12\n567", 7));
+// 	printf("ft_memcmp(ABC12\\n456, ABC12\\n567, 7):%d\n", ft_memcmp("ABC12\n456", "ABC12\n567", 7));
+// 	printf("memcmp(ABC12\\n456, ABC12\\n567, 7):%d\n", memcmp("ABC12\n456", "ABC12\n567", 7));
+// 	printf("ft_memcmp(ABC12\\n956, ABC12\\n567, 6):%d\n", ft_memcmp("ABC12\n956", "ABC12\n567", 6));
+// 	printf("memcmp(ABC12\\n956, ABC12\\n567, 6):%d\n", memcmp("ABC12\n956", "ABC12\n567", 6));
+// }

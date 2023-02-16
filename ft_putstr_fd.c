@@ -2,20 +2,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (fd < 0 || !s)
+		return;
+	write(fd, s, ft_strlen(s));
 }
 
-//int main()
-//{
-//	char *s = "abcDEFG";
-//	int fd = 1;
-//	ft_putstr_fd(s, fd);
-//}
-
+// int main()
+// {
+// 	char *s = NULL;
+// 	int fd = 1;
+// 	ft_putstr_fd(s, fd);
+// }

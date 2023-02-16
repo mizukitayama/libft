@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 33 && c <= 126)
+	if (c >= 32 && c <= 126)
 	{
 		return (1);
 	}
@@ -25,12 +25,13 @@ int	ft_isprint(int c)
 }
 
 // #include <stdio.h>
+// #include <ctype.h>
 // int main()
 // {
 // 	puts("\nft_isprint----\n");
-// 	printf("'0' -> %d\n", ft_isprint('0'));
-// 	printf("'9' -> %d\n", ft_isprint('1'));
-// 	printf("'a' -> %d\n", ft_isprint('a'));
-// 	printf("'\t' -> %d\n", ft_isprint('\t'));
-// 	printf("0 -> %d\n", ft_isprint(0));
+// 	printf("'0' -> %d\n", isprint('0'));
+// 	printf("'9' -> %d\n", isprint('1'));
+// 	printf("'a' -> %d\n", isprint('a'));
+// 	printf("'\t' -> %d\n", isprint('\t'));
+// 	printf("0 -> %d\n", isprint(0));
 // }
