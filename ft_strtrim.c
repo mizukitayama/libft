@@ -94,11 +94,11 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 }
 
-#include <string.h>
-#include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
 
-int	main()
-{
-	char* s = ft_strtrim("123   ", " ");
-	printf("Trimmed is: '%s'\n", s);
-}
+// int	main()
+// {
+// 	char* s = ft_strtrim("123   ", " ");
+// 	printf("Trimmed is: '%s'\n", s);
+// }

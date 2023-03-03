@@ -31,12 +31,8 @@ int ft_atoi(const char *nptr)
 
 	sign = 0;
 	i = 0;
-	while(!ft_isdigit(*nptr) && *nptr != '-' && *nptr != '+')
+	while (*nptr == '\t' || *nptr == '\n' || *nptr == '\v' || *nptr == '\f' || *nptr == '\r' || *nptr == ' ')
 	{
-		if (*nptr == '\e')
-		{
-			return (0);
-		}
 		nptr++;
 	}
 	if (*nptr == '-')
@@ -44,7 +40,7 @@ int ft_atoi(const char *nptr)
 		sign = 1;
 		nptr++;
 	}
-	while (*nptr == '+')
+	else if (*nptr == '+')
 	{
 		nptr++;
 	}
@@ -57,14 +53,13 @@ int ft_atoi(const char *nptr)
 // #include <stdio.h>
 // int main()
 // {
-// 	puts("\nft_atoi-----\n");
 // 	printf("%d\n", ft_atoi("-2147483648"));
-// 	printf("%d\n", ft_atoi("-100"));
 // 	printf("%d\n", ft_atoi("0"));
-// 	printf("%d\n", ft_atoi("100"));
-// 	printf("%d\n", ft_atoi("12345"));
+// 	printf("%d\n", ft_atoi("-100"));
+// 	printf("%d\n", ft_atoi("-+100"));
+// 	printf("%d\n", ft_atoi("++100"));
 // 	printf("%d\n", ft_atoi("2147483647"));
 // 	printf("%d\n", ft_atoi(""));
-// 	printf("%d\n", ft_atoi(" \t\v\f\r\n \f1  "));
-// 	printf("%d\n", atoi(" \e-54431  "));
+// 	printf("%d\n", atoi("\t \v \f\r\n\f-1  "));
+// 	printf("%d\n", ft_atoi(" \e-54431  "));
 // }

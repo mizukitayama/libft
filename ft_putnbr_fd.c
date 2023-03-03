@@ -1,11 +1,15 @@
 #include "libft.h"
 void write_nbr(int n, int fd)
 {
-	if (n > 10)
+	if (n <= 9)
+	{
+		write(fd, &"0123456789"[n], 1);
+	}
+	else
 	{
 		write_nbr(n / 10, fd);
+		write_nbr(n % 10, fd);
 	}
-	write(fd, &"0123456789"[n % 10], 1);
 	return;
 }
 
@@ -28,7 +32,7 @@ void ft_putnbr_fd(int n, int fd)
 
 // int main()
 // {
-// 	int n1 = -2143648986;
+// 	int n1 = 10;
 // 	int fd = 1;
 // 	ft_putnbr_fd(n1, fd);
 // }

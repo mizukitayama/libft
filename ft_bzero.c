@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-//your bzero does not segfault when null params is sent
-// -> removed if(!s){return ;}...
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;

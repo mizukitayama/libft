@@ -12,18 +12,27 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
-	while (*s && *s != c)
+	while (*s != '\0')
 	{
+		if ((unsigned char)*s == (unsigned char)c)
+			return ((char *)s);
 		s++;
 	}
-	if (*s == c)
-	{
+	if (c == 0)
 		return ((char *)s);
-	}
-	else
-	{
-		return (0);
-	}
+	return (NULL);
 }
+
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+// 	char s[] = "tripouille";
+// 	printf("%s", ft_strchr(s, 't' + 256));
+// 	printf("%s", s + strlen(s));
+// 	char *src = "īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ";
+
+// 	char *d1 = strchr(src, L'–');
+// }

@@ -109,29 +109,29 @@ char	**ft_split(char const *s, char c)
 	return (splitted);
 }
 
-// #include <stdio.h>
-// void print(const char *s, char c)
-// {
-// 	char	**splitted = ft_split(s, c);
-// 	for (int i = 0; splitted[i]; i++)
-// 	{
-// 		printf("%s\n", splitted[i]);
-// 	}
-// }
+#include <stdio.h>
+void print(const char *s, char c)
+{
+	char	**splitted = ft_split(s, c);
+	for (int i = 0; splitted[i]; i++)
+	{
+		printf("%s\n", splitted[i]);
+	}
+}
 // int main()
 // {
-// 	const char	*s1 = "12a34aaaaa567aaaaaa890aa";
-// 	const char	*s2 = "a1\na2a3a4\na\n";
-// 	const char	*s3 = NULL;
-// 	const char	c1 = 'a';
-// 	const char	c2 = '\n';
-// 	const char	c3 = 0;
-// 	puts("\nft_spilit-----\n");
-// 	puts("(s1, c1):");
-// 	print(s1, c1);
-// 	puts("\n(s2, c2):");
-// 	print(s2, c2);
-// 	puts("\n(s1, c3):");
-// 	print(s1, c3);
-// 	puts("\n");
+// 	// const char	*s1 = "12a34aaaaa567aaaaaa890aa";
+// 	// const char	*s2 = "a1\na2a3a4\na\n";
+// 	// const char	*s3 = NULL;
+// 	// const char	c1 = 'a';
+// 	// const char	c2 = '\n';
+// 	// const char	c3 = 0;
+// 	// puts("\nft_spilit-----\n");
+// 	// puts("(s1, c1):");
+// 	// print(s1, c1);
+// 	// puts("\n(s2, c2):");
+// 	// print(s2, c2);
+// 	// puts("\n(s1, c3):");
+// 	// print(s1, c3);
+// 	// puts("\n");
 // }

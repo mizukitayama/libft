@@ -20,9 +20,17 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	if (len == 0)
+	{
+		t = malloc(sizeof(char) * 1);
+		t[0] = '\0';
+		return (t);
+	}
 	if (!s || start >= ft_strlen(s))
 	{
 		t = malloc(sizeof(char) * 1);
+		if (t == 0)
+			return (0);
 	}
 	else
 	{
@@ -49,7 +57,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 // #include <stdio.h>
 // int main()
 // {
-// 	char *str = "qweryth";
-// 	size_t size = 2;
-// 	printf("%s", ft_substr(str, 2, size));
+// 	char *str = ft_strdup("0123456789");
+// 	char *s = ft_substr("42", 0, 0);
+// 	printf("%s", s);
+// 	// char *str = "qweryth";
+// 	// size_t size = 2;
+// 	// printf("%s", ft_substr(str, 2, size));
 // }
