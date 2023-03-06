@@ -6,7 +6,7 @@
 /*   By: mtayama <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:08:39 by mtayama           #+#    #+#             */
-/*   Updated: 2022/10/08 15:15:32 by mtayama          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:27:47 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
-	size_t 			i;
+	size_t			i;
 
 	p = s;
 	i = 0;
@@ -25,7 +25,6 @@ void	ft_bzero(void *s, size_t n)
 		i ++;
 	}
 }
-
 
 // #include <stdio.h>
 // #include <strings.h>

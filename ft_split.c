@@ -109,15 +109,15 @@ char	**ft_split(char const *s, char c)
 	return (splitted);
 }
 
-#include <stdio.h>
-void print(const char *s, char c)
-{
-	char	**splitted = ft_split(s, c);
-	for (int i = 0; splitted[i]; i++)
-	{
-		printf("%s\n", splitted[i]);
-	}
-}
+// #include <stdio.h>
+// void print(const char *s, char c)
+// {
+// 	char	**splitted = ft_split(s, c);
+// 	for (int i = 0; splitted[i]; i++)
+// 	{
+// 		printf("%s\n", splitted[i]);
+// 	}
+// }
 // int main()
 // {
 // 	// const char	*s1 = "12a34aaaaa567aaaaaa890aa";

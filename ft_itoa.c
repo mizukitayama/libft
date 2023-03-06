@@ -6,12 +6,12 @@
 /*   By: mtayama <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:41:34 by mtayama           #+#    #+#             */
-/*   Updated: 2022/10/22 13:45:29 by mtayama          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:51:41 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int count_len(int n, int accumulator)
+int	count_len(int n, int accumulator)
 {
 	if (n < 0)
 	{
@@ -27,10 +27,10 @@ int count_len(int n, int accumulator)
 	}
 }
 
-void convert_int_to_str(int n, char *str)
+void	convert_int_to_str(int n, char *str)
 {
-	int i;
-	int n_cp;
+	int	i;
+	int	n_cp;
 
 	i = 0;
 	n_cp = n / 10;
@@ -45,35 +45,41 @@ void convert_int_to_str(int n, char *str)
 	str[i + 1] = '\0';
 }
 
-char *ft_itoa(int n)
+char	*my_itoa(int n)
 {
-	size_t i;
-	size_t len;
-	char *str;
-	int flag;
+	size_t	len;
+	char	*str;
+	int		flag;
+
+	flag = 0;
+	len = count_len(n, 0);
+	if (n < 0)
+	{
+		str = malloc(sizeof(char) * (len + 2));
+	}
+	else
+	{
+		str = malloc(sizeof(char) * (len + 1));
+	}
+	if (str == 0)
+		return (0);
+	if (n < 0)
+	{
+		flag = 1;
+		str[0] = '-';
+		n *= -1;
+	}
+	convert_int_to_str(n, str + flag);
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
 
 	if (n != -2147483648)
 	{
-		i = 0;
-		flag = 0;
-		len = count_len(n, 0);
-		if (n < 0)
-		{
-			str = malloc(sizeof(char) * (len + 2));
-		}
-		else
-		{
-			str = malloc(sizeof(char) * (len + 1));
-		}
-		if (str == 0)
-			return (0);
-		if (n < 0)
-		{
-			flag = 1;
-			str[0] = '-';
-			n *= -1;
-		}
-		convert_int_to_str(n, str + flag);
+		str = my_itoa(n);
 	}
 	else
 	{
@@ -87,13 +93,11 @@ char *ft_itoa(int n)
 // int main()
 // {
 // 	puts("\nft_itoa-----\n");
-// 	char* min = ft_itoa(-2147483648);
-// 	printf("%s\n", min);
-// 	free(min);
-// 	// printf("%s\n", ft_itoa(-100));
-// 	// printf("%s\n", ft_itoa(0));
-// 	// printf("%s\n", ft_itoa(100));
-// 	// printf("%s\n", ft_itoa(12345));
-// 	// printf("%s\n\n", ft_itoa(2147483647));
-// 	// printf("%s\n", ft_itoa(-12345));
+
+// 	printf("%s\n", ft_itoa(-100));
+// 	printf("%s\n", ft_itoa(0));
+// 	printf("%s\n", ft_itoa(100));
+// 	printf("%s\n", ft_itoa(12345));
+// 	printf("%s\n\n", ft_itoa(2147483647));
+// 	printf("%s\n", ft_itoa(-12345));
 // }

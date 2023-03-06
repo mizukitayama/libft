@@ -6,7 +6,7 @@
 /*   By: mtayama <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:07:28 by mtayama           #+#    #+#             */
-/*   Updated: 2022/10/18 14:42:52 by mtayama          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:52:26 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	buf1_cp = (unsigned char *)buf1;
 	buf2_cp = (unsigned char *)buf2;
 	i = 0;
-	if(n <= 0)
+	if (n <= 0)
 		return (0);
 	while (i < n)
 	{
@@ -42,9 +42,9 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 // int main()
 // {
 // 	puts("\nft_memcmp-----\n");
-// 	printf("ft_memcmp(ABC12\\n567, ABC12\\n567, 7):%d\n", ft_memcmp("ABC12\n567", "ABC12\n567", 7));
-// 	printf("ft_memcmp(ABC12\\n456, ABC12\\n567, 7):%d\n", ft_memcmp("ABC12\n456", "ABC12\n567", 7));
-// 	printf("memcmp(ABC12\\n456, ABC12\\n567, 7):%d\n", memcmp("ABC12\n456", "ABC12\n567", 7));
-// 	printf("ft_memcmp(ABC12\\n956, ABC12\\n567, 6):%d\n", ft_memcmp("ABC12\n956", "ABC12\n567", 6));
-// 	printf("memcmp(ABC12\\n956, ABC12\\n567, 6):%d\n", memcmp("ABC12\n956", "ABC12\n567", 6));
+// 	printf("%d\n", ft_memcmp("ABC12\n567", "ABC12\n567", 7));
+// 	printf("%d\n", ft_memcmp("ABC12\n456", "ABC12\n567", 7));
+// 	printf("%d\n", memcmp("ABC12\n456", "ABC12\n567", 7));
+// 	printf("%d\n", ft_memcmp("ABC12\n956", "ABC12\n567", 6));
+// 	printf("%d\n", memcmp("ABC12\n956", "ABC12\n567", 6));
 // }
