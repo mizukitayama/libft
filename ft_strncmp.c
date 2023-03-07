@@ -19,6 +19,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char *s2_cp = (unsigned char *)s2;
 
 	i = 0;
+
+	if (n == 0)
+		return (0);
 	while ((s1_cp[i] || s2_cp[i]) && i < n)
 	{
 		if (s1_cp[i] > s2_cp[i])
@@ -36,3 +39,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	printf("%d\n",strncmp("hello", NULL, 0));
+// 	printf("%d\n",strncmp(NULL, "hello", 0));
+// 	printf("%d\n",strncmp(NULL, NULL, 0));
+// }

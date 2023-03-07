@@ -16,6 +16,12 @@ void	*ft_calloc(size_t number, size_t size)
 {
 	void	*p;
 
+	if ((number * size) == 0)
+		return (ft_strdup(""));
+	if (number > SIZE_MAX / size && size != 0)
+	{
+		return (NULL);
+	}
 	p = malloc(number * size);
 	if (p == NULL)
 		return (NULL);
@@ -26,5 +32,6 @@ void	*ft_calloc(size_t number, size_t size)
 // #include <stdio.h>
 // int main()
 // {
-// 	void *p = ft_calloc(18446744073709551615UL, 18446744073709551615UL);
+// 	// void *p = ft_calloc(18446744073709551615UL, 18446744073709551615UL);
+// 	printf("%p", ft_calloc(0, 0));
 // }

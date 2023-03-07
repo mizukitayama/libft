@@ -36,7 +36,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		while (haystack[i + j] == needle[j])
 		{
 			if (j == size_needle - 1)
-				return ((char *)&haystack[i]);
+			{
+				if (i + j < len)
+				{
+					return ((char *)&haystack[i]);
+				}
+				else
+				{
+					return (NULL);
+				}
+			}
 			j++;
 		}
 		i++;
@@ -48,5 +57,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // #include <string.h>
 // int main()
 // {
-// 	printf("%s", strnstr("see FF your FF return FF now FF", "FF", 10));
+// 	char *str = "libft-test-tokyoaaa";
+// 	// printf("%s", strnstr("see FF your FF return FF now FF", "FF", 1));
+// 	printf("%s", ft_strnstr(str, "libft-test-tokyo", 15));
 // }

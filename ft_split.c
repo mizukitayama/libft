@@ -6,11 +6,13 @@
 /*   By: mtayama <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 11:40:56 by mtayama           #+#    #+#             */
-/*   Updated: 2022/10/22 11:40:58 by mtayama          ###   ########.fr       */
+/*   Updated: 2023/03/07 14:27:31 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdio.h>
 
 size_t	count_words(char const *s, char c)
 {
@@ -82,7 +84,7 @@ char	**append_arr(char const *s, char c, char **splitted, size_t	words)
 			free_arr(splitted);
 			return (NULL);
 		}
-		while (s[i] != c)
+		while (s[i] != c && s[i] != '\0')
 			i++;
 		j++;
 	}
@@ -113,22 +115,24 @@ char	**ft_split(char const *s, char c)
 // void print(const char *s, char c)
 // {
 // 	char	**splitted = ft_split(s, c);
-// 	for (int i = 0; splitted[i]; i++)
+// 	for (int i = 0; i < 7; i++)
 // 	{
 // 		printf("%s\n", splitted[i]);
+// 		printf("size: %lu\n", sizeof(splitted[i]));
 // 	}
 // }
 // int main()
 // {
-// 	// const char	*s1 = "12a34aaaaa567aaaaaa890aa";
+// 	const char	*s1 = "--1-2--3---4----5-----42-";
 // 	// const char	*s2 = "a1\na2a3a4\na\n";
 // 	// const char	*s3 = NULL;
 // 	// const char	c1 = 'a';
 // 	// const char	c2 = '\n';
 // 	// const char	c3 = 0;
-// 	// puts("\nft_spilit-----\n");
+// 	puts("\nft_spilit-----\n");
 // 	// puts("(s1, c1):");
-// 	// print(s1, c1);
+// 	print(s1, '-');
+// 	// printf("%lu\n", count_words(s1, '-'));
 // 	// puts("\n(s2, c2):");
 // 	// print(s2, c2);
 // 	// puts("\n(s1, c3):");

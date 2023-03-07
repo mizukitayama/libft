@@ -12,25 +12,14 @@
 
 #include "libft.h"
 
-// returns the pointer when matches to c(converted to char), searching from back of the string
-int handle_chr(int c)
-{
-	while (c > 256)
-	{
-		c -= 256;
-	}
-	return (c);
-}
-
 char *ft_strrchr(const char *s, int c)
 {
 	int len_s;
 
 	len_s = ft_strlen(s);
-	c = handle_chr(c);
 	while (len_s >= 0)
 	{
-		if (s[len_s] == c)
+		if (s[len_s] == (unsigned char) c)
 			return ((char*)&s[len_s]);
 		len_s--;
 	}
