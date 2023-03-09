@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "limits.h"
 
 int		ft_atoi(const char *nptr);
 

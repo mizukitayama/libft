@@ -12,16 +12,12 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *buf1, const void *buf2, size_t n)
+static void	move_mem(void *buf1, const void *buf2, size_t n)
 {
 	unsigned char	*c_buf1;
 	unsigned char	*c_buf2;
 	size_t			i;
 
-	if ((buf1 == NULL && buf2 == NULL) || !n)
-	{
-		return (buf1);
-	}
 	c_buf1 = (unsigned char *)buf1;
 	c_buf2 = (unsigned char *)buf2;
 	i = 0;
@@ -41,14 +37,23 @@ void	*ft_memmove(void *buf1, const void *buf2, size_t n)
 			i++;
 		}
 	}
+}
+
+void	*ft_memmove(void *buf1, const void *buf2, size_t n)
+{
+	if ((buf1 == NULL && buf2 == NULL) || !n)
+	{
+		return (buf1);
+	}
+	move_mem(buf1, buf2, n);
 	return (buf1);
 }
 
 // #include <stdio.h>
 // int main()
 // {
-// 	char str[] = "abcdefghijklmnopqrstu";
+// 	char str[] = "helloworld";
 // 	printf("移動前：%s\n", str);
-// 	ft_memmove(str + 5, str, 10);
+// 	ft_memmove(str+3, str, 2);
 // 	printf("移動後：%s\n", str);
 // }

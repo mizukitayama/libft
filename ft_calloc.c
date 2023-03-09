@@ -17,8 +17,8 @@ void	*ft_calloc(size_t number, size_t size)
 	void	*p;
 
 	if ((number * size) == 0)
-		return (ft_strdup(""));
-	if (number > SIZE_MAX / size && size != 0)
+		return ((void *)ft_strdup(""));
+	if (size != 0 && number > (size_t)SIZE_MAX / size)
 	{
 		return (NULL);
 	}

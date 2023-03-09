@@ -12,23 +12,18 @@
 
 #include "libft.h"
 
-#include "limits.h"
-
-#include <stdio.h>
-
-int my_atoi(char *nptr, long i, int sign)
+static int	my_atoi(char *nptr, long i, long sign)
 {
-	int j;
+	size_t	j;
 
 	j = 0;
-	while (nptr[j] && ft_isdigit(nptr[j]))
+	while (nptr[j] && ft_isdigit((int)nptr[j]))
 	{
 		i = (i * 10) + (nptr[j] - 48);
-		// printf("%lu\n", i);
-		// printf("c = %d\n", (nptr[j] - 48));
-		if ((i > (LONG_MAX / 10) && nptr[j + 1] != '\0')|| ((i == (LONG_MAX / 10)) && ((nptr[j + 1] - 48) > (LONG_MAX % 10))))
+		if ((i > (LONG_MAX / 10) && nptr[j + 1] != '\0')
+			|| ((i == (LONG_MAX / 10))
+				&& ((long)(nptr[j + 1] - 48) > (LONG_MAX % 10))))
 		{
-			// puts("aaaaa");
 			if (sign == 1)
 			{
 				return ((int)LONG_MAX);
@@ -36,22 +31,20 @@ int my_atoi(char *nptr, long i, int sign)
 			if (sign == -1)
 				return ((int)LONG_MIN);
 		}
-		// i *= 10;
-		// i += *nptr - 48;
-		
 		j++;
 	}
 	return ((int)i * sign);
 }
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int sign;
-	long i;
+	long	sign;
+	long	i;
 
 	sign = 1;
 	i = 0;
-	while (*nptr == '\t' || *nptr == '\n' || *nptr == '\v' || *nptr == '\f' || *nptr == '\r' || *nptr == ' ')
+	while (*nptr == '\t' || *nptr == '\n' || *nptr == '\v'
+		|| *nptr == '\f' || *nptr == '\r' || *nptr == ' ')
 	{
 		nptr++;
 	}
@@ -64,27 +57,25 @@ int ft_atoi(const char *nptr)
 	{
 		nptr++;
 	}
-	return ((int)my_atoi((char *)nptr, i, sign));
+	return (my_atoi((char *)nptr, i, sign));
 }
 
 // #include <stdio.h>
-
 // int main()
 // {
-// 	// printf("%d\n", ft_atoi("-2147483648"));
-// 	// printf("%d\n", ft_atoi("0"));
-// 	// printf("%d\n", ft_atoi("-100"));
-// 	// printf("%d\n", ft_atoi("-+100"));
-// 	// printf("%d\n", ft_atoi("++100"));
-// 	// printf("%d\n", ft_atoi("2147483647"));
-// 	// printf("%d\n", ft_atoi(""));
-// 	// printf("%d\n", atoi("\t \v \f\r\n\f-1  "));
-// 	// printf("%d\n", ft_atoi(" \e-54431  "));
-
+// 	printf("%d\n", ft_atoi("-2147483648"));
+// 	printf("%d\n", ft_atoi("0"));
+// 	printf("%d\n", ft_atoi("-100"));
+// 	printf("%d\n", ft_atoi("-+100"));
+// 	printf("%d\n", ft_atoi("++100"));
+// 	printf("%d\n", ft_atoi("2147483647"));
+// 	printf("%d\n", ft_atoi(""));
+// 	printf("%d\n", atoi("\t \v \f\r\n\f-1  "));
+// 	printf("%d\n", ft_atoi(" \e-54431  "));
 // 	// unsigned long x = 9223372036854775808;
 // 	// int y = (int)x;
 // 	// printf("%d", y);
 // 	printf("%d\n", ft_atoi("9223372036854775806"));
-// 	printf("%d", atoi("9223372036854775806"));
+// 	// printf("%d", atoi("9223372036854775806"));
 // 	// printf("%lu,\n%lu", LONG_MAX / 10, LONG_MAX % 10);
 // }

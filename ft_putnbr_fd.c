@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	write_nbr(int n, int fd)
+static void	write_nbr(int n, int fd)
 {
 	if (n <= 9)
 	{

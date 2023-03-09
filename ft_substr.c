@@ -12,53 +12,53 @@
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+static char	*copy_slice(char const *s, unsigned int start, size_t len)
 {
-	char *t;
-	size_t i;
-	size_t j;
+	char	*t;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	if (len == 0)
+	while (s[(size_t)start + i] && i < len)
+		i++;
+	if (i == 0)
+		return (NULL);
+	t = (char *)malloc(sizeof(char) * (i + 1));
+	if (t == NULL)
+		return (NULL);
+	while (i > j)
 	{
-		t = malloc(sizeof(char) * 1);
+		t[j] = s[j + (size_t)start];
+		j++;
+	}
+	t[j] = '\0';
+	return (t);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*t;
+
+	if (len == 0 || !s || (size_t)start >= ft_strlen(s))
+	{
+		t = (char *)malloc(sizeof(char) * 1);
+		if (t == NULL)
+			return (NULL);
 		t[0] = '\0';
 		return (t);
 	}
-	if (!s || start >= ft_strlen(s))
-	{
-		t = malloc(sizeof(char) * 1);
-		if (t == 0)
-			return (0);
-	}
 	else
 	{
-		while (s[start + i] && i < len)
-		{
-			i++;
-		}
-		if (i == 0)
-			return (0);
-		t = malloc(sizeof(char) * (i + 1));
-		if (t == 0)
-			return (0);
-		while (j < i)
-		{
-			t[j] = s[j + start];
-			j++;
-		}
+		return (copy_slice(s, start, len));
 	}
-
-	t[j] = '\0';
-	return (t);
 }
 
 // #include <stdio.h>
 // int main()
 // {
-// 	char *str = ft_strdup("0123456789");
-// 	char *s = ft_substr("42", 0, 0);
+// 	// char *str = ft_strdup("0123456789");
+// 	char *s = ft_substr("423245264", 2, 2);
 // 	printf("%s", s);
 // 	// char *str = "qweryth";
 // 	// size_t size = 2;

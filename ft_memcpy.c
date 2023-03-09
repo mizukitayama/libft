@@ -12,21 +12,15 @@
 
 #include "libft.h"
 
-//char *
-//    int arr1[] = {1, 2, 3, 4, 5};
-//    int arr2[5];
-//    memcpy(arr2, arr1, sizeof(arr1));
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
 	i = 0;
 	if (!dst && !src)
-		return (0);
+		return (NULL);
 	while (i < len)
-	{
 		*(unsigned char *)(dst + i++) = *(unsigned char *)(src++);
-	}
 	return (dst);
 }
 
@@ -39,4 +33,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 // 	char str2[5];
 // 	ft_memcpy(str2, str, 5);
 // 	printf("%s", str2);
+// }
+// int main()
+// {
+//    int arr1[] = {1, 2, 3, 4, 5};
+//    int arr2[5];
+//    memcpy(arr2, arr1, sizeof(arr1));
+//    printf("%d", arr2[1]);
 // }

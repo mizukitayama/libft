@@ -27,10 +27,7 @@ int	ft_isalpha(int c)
 // #include <stdio.h>
 // int main()
 // {
-//	puts("\nft_isalpha-----\n");
 // 	printf("'a' -> %d\n", ft_isalpha('a'));
 // 	printf("'z' -> %d\n", ft_isalpha('z'));
 // 	printf("'5' -> %d\n", ft_isalpha('5'));
-// 	printf("'\t' -> %d\n", ft_isalpha('\t'));
-// 	printf("0 -> %d\n", ft_isalpha(0));
 // }

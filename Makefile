@@ -1,4 +1,4 @@
-CC		=	gcc
+CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -rf
 
@@ -14,11 +14,10 @@ NAME	=	libft.a
 
 SRCS_OBJS	=	$(SRCS:.c=.o)
 
+all: $(NAME)
+
 $(NAME): $(SRCS_OBJS)
 	ar rcs $(NAME) $(SRCS_OBJS)
-
-all:
-	$(NAME)
 
 clean:
 	$(RM) $(SRCS_OBJS)

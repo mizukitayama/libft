@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	count_len(int n, int accumulator)
+static size_t	count_len(int n, int accumulator)
 {
 	if (n < 0)
 	{
@@ -27,10 +27,10 @@ int	count_len(int n, int accumulator)
 	}
 }
 
-void	convert_int_to_str(int n, char *str)
+static void	convert_int_to_str(int n, char *str)
 {
-	int	i;
-	int	n_cp;
+	size_t	i;
+	int		n_cp;
 
 	i = 0;
 	n_cp = n / 10;
@@ -45,21 +45,21 @@ void	convert_int_to_str(int n, char *str)
 	str[i + 1] = '\0';
 }
 
-char	*my_itoa(int n)
+static char	*my_itoa(int n)
 {
 	size_t	len;
 	char	*str;
-	int		flag;
+	size_t	flag;
 
 	flag = 0;
 	len = count_len(n, 0);
 	if (n < 0)
 	{
-		str = malloc(sizeof(char) * (len + 2));
+		str = (char *)malloc(sizeof(char) * (len + 2));
 	}
 	else
 	{
-		str = malloc(sizeof(char) * (len + 1));
+		str = (char *)malloc(sizeof(char) * (len + 1));
 	}
 	if (str == 0)
 		return (0);
@@ -83,7 +83,9 @@ char	*ft_itoa(int n)
 	}
 	else
 	{
-		str = malloc(sizeof(char) * 12);
+		str = (char *)malloc(sizeof(char) * 12);
+		if (str == NULL)
+			return (NULL);
 		ft_strlcpy(str, "-2147483648", 12);
 	}
 	return (str);

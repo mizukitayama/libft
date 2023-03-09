@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	int		flag;
 	size_t	i;
@@ -39,7 +39,7 @@ size_t	count_words(char const *s, char c)
 	return (words);
 }
 
-size_t	count_strlen(char const *s, char c, int i)
+static size_t	count_strlen(char const *s, char c, size_t i)
 {
 	size_t	len;
 
@@ -52,20 +52,20 @@ size_t	count_strlen(char const *s, char c, int i)
 	return (len);
 }
 
-void	free_arr(char **strs)
+static void	free_arr(char **strs)
 {
 	size_t	i;
 
 	i = 0;
 	while (strs[i])
 	{
-		free(strs[i]);
+		free((void *)strs[i]);
 		i++;
 	}
-	free(strs);
+	free((void **)strs);
 }
 
-char	**append_arr(char const *s, char c, char **splitted, size_t	words)
+static char	**append_arr(char const *s, char c, char **splitted, size_t	words)
 {
 	size_t	i;
 	size_t	j;
@@ -78,7 +78,7 @@ char	**append_arr(char const *s, char c, char **splitted, size_t	words)
 		while (s[i] == c)
 			i++;
 		len = count_strlen(s, c, i);
-		splitted[j] = ft_substr(s, i, len);
+		splitted[j] = ft_substr(s, (unsigned int)i, len);
 		if (splitted[j] == NULL)
 		{
 			free_arr(splitted);
@@ -104,9 +104,9 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	words = count_words(s, c);
-	splitted = malloc(sizeof(char *) * (words + 1));
-	if (splitted == 0)
-		return (0);
+	splitted = (char **)malloc(sizeof(char *) * (words + 1));
+	if (splitted == NULL)
+		return (NULL);
 	splitted = append_arr(s, c, splitted, words);
 	return (splitted);
 }
