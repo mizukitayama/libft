@@ -12,28 +12,17 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
 static size_t	count_words(char const *s, char c)
 {
-	int		flag;
-	size_t	i;
 	size_t	words;
+	size_t	i;
 
-	flag = 1;
-	i = 0;
 	words = 0;
+	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && flag == 1)
-		{
-			flag = 0;
+		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
 			words++;
-		}
-		else if (s[i] == c)
-		{
-			flag = 1;
-		}
 		i++;
 	}
 	return (words);

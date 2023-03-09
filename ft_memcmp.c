@@ -27,7 +27,7 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	{
 		if (buf1_cp[i] != buf2_cp[i])
 		{
-			return (buf1_cp[i] - buf2_cp[i]);
+			return ((int)(buf1_cp[i] - buf2_cp[i]));
 		}
 		else
 		{

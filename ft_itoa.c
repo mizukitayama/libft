@@ -9,6 +9,7 @@
 /*   Updated: 2023/03/06 16:51:41 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	count_len(int n, int accumulator)
@@ -61,8 +62,8 @@ static char	*my_itoa(int n)
 	{
 		str = (char *)malloc(sizeof(char) * (len + 1));
 	}
-	if (str == 0)
-		return (0);
+	if (str == NULL)
+		return (NULL);
 	if (n < 0)
 	{
 		flag = 1;
@@ -83,10 +84,7 @@ char	*ft_itoa(int n)
 	}
 	else
 	{
-		str = (char *)malloc(sizeof(char) * 12);
-		if (str == NULL)
-			return (NULL);
-		ft_strlcpy(str, "-2147483648", 12);
+		str = ft_strdup("-2147483648");
 	}
 	return (str);
 }

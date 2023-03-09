@@ -27,7 +27,7 @@ void	*ft_memchr(const void *buf, int ch, size_t n)
 		}
 		i ++;
 	}
-	return (0);
+	return (NULL);
 }
 
 // #include <stdio.h>

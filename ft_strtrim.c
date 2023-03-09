@@ -9,6 +9,7 @@
 /*   Updated: 2022/10/18 17:14:51 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	is_in_set(char c, char *set)
@@ -72,6 +73,11 @@ static char	*trim_str(const char *s1, const char *set)
 	return (trimmed);
 }
 
+
+//				if (trimmed == NULL)
+			// return (NULL);
+//後ろからと前からを同時に見る、交差した時にNULLをリターンする
+
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*trimmed;
@@ -83,12 +89,16 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (s1_len == 0)
 	{
 		trimmed = (char *)malloc(sizeof(char) * 1);
+				if (trimmed == NULL)
+			return (NULL);
 		trimmed[0] = '\0';
 		return (trimmed);
 	}
 	else if (set == NULL || ft_strlen(set) == 0)
 	{
-		trimmed = (char *)malloc(sizeof(char) * (s1_len));
+		trimmed = (char *)malloc(sizeof(char) * (s1_len + 1));
+		if (trimmed == NULL)
+			return (NULL);
 		ft_strlcpy(trimmed, s1, s1_len + 1);
 		return (trimmed);
 	}
