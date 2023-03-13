@@ -28,10 +28,3 @@ void	*ft_calloc(size_t number, size_t size)
 	ft_bzero(p, number * size);
 	return (p);
 }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	// void *p = ft_calloc(18446744073709551615UL, 18446744073709551615UL);
-// 	printf("%p", ft_calloc(0, 0));
-// }

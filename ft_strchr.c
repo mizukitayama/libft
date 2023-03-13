@@ -24,15 +24,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// int main()
-// {
-// 	char s[] = "tripouille";
-// 	printf("%s", ft_strchr(s, 't' + 256));
-// 	printf("%s", s + strlen(s));
-// 	char *src = "īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ";
-
-// 	char *d1 = strchr(src, L'–');
-// }

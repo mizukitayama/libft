@@ -48,12 +48,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (NULL);
 	return (search(haystack, needle, len, len_needle));
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char *str = "libft-test-tokyoaaa";
-// 	// printf("%s", strnstr("see FF your FF return FF now FF", "FF", 1));
-// 	printf("%s", ft_strnstr(str, "libft-test-tokyo", 15));
-// }

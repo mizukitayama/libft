@@ -99,32 +99,3 @@ char	**ft_split(char const *s, char c)
 	splitted = append_arr(s, c, splitted, words);
 	return (splitted);
 }
-
-// #include <stdio.h>
-// void print(const char *s, char c)
-// {
-// 	char	**splitted = ft_split(s, c);
-// 	for (int i = 0; i < 7; i++)
-// 	{
-// 		printf("%s\n", splitted[i]);
-// 		printf("size: %lu\n", sizeof(splitted[i]));
-// 	}
-// }
-// int main()
-// {
-// 	const char	*s1 = "--1-2--3---4----5-----42-";
-// 	// const char	*s2 = "a1\na2a3a4\na\n";
-// 	// const char	*s3 = NULL;
-// 	// const char	c1 = 'a';
-// 	// const char	c2 = '\n';
-// 	// const char	c3 = 0;
-// 	puts("\nft_spilit-----\n");
-// 	// puts("(s1, c1):");
-// 	print(s1, '-');
-// 	// printf("%lu\n", count_words(s1, '-'));
-// 	// puts("\n(s2, c2):");
-// 	// print(s2, c2);
-// 	// puts("\n(s1, c3):");
-// 	// print(s1, c3);
-// 	// puts("\n");
-// }

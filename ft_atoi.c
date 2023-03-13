@@ -59,23 +59,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (my_atoi((char *)nptr, i, sign));
 }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	printf("%d\n", ft_atoi("-2147483648"));
-// 	printf("%d\n", ft_atoi("0"));
-// 	printf("%d\n", ft_atoi("-100"));
-// 	printf("%d\n", ft_atoi("-+100"));
-// 	printf("%d\n", ft_atoi("++100"));
-// 	printf("%d\n", ft_atoi("2147483647"));
-// 	printf("%d\n", ft_atoi(""));
-// 	printf("%d\n", atoi("\t \v \f\r\n\f-1  "));
-// 	printf("%d\n", ft_atoi(" \e-54431  "));
-// 	// unsigned long x = 9223372036854775808;
-// 	// int y = (int)x;
-// 	// printf("%d", y);
-// 	printf("%d\n", ft_atoi("9223372036854775806"));
-// 	// printf("%d", atoi("9223372036854775806"));
-// 	// printf("%lu,\n%lu", LONG_MAX / 10, LONG_MAX % 10);
-// }

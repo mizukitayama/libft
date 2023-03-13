@@ -16,16 +16,3 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
 }
-
-// #include <stdio.h>
-// #include <strings.h>
-// int main()
-// {
-// 	puts("\nft_bzero-----\n");
-// 	char buf1[] = "1234567890";
-// 	char *buf2	= NULL;
-// 	ft_bzero(buf1+5, 3);
-// 	ft_bzero(buf2, 3);
-// 	printf("ft_bzero(buf1 + 5, 3): %s\n", buf1);
-// 	printf("ft_bzero(buf2 + 5, 3): %s\n", buf2);
-// }

@@ -28,14 +28,12 @@ static int	is_in_set(char c, char *set)
 	return (0);
 }
 
-static char	*copy(const char *s1, const char *set, size_t bgn, size_t end)
+static char	*copy(const char *s1, size_t bgn, size_t end)
 {
 	size_t	i;
 	char	*trimmed;
 
 	i = 0;
-	while (is_in_set(s1[end], (char *)set) && end > 0)
-		end--;
 	trimmed = (char *)malloc(sizeof(char) * (end - bgn + 2));
 	if (trimmed == NULL)
 		return (NULL);
@@ -59,24 +57,33 @@ static char	*trim_str(const char *s1, const char *set)
 	end = ft_strlen(s1) - 1;
 	while (is_in_set(s1[bgn], (char *)set))
 		bgn++;
-	if (bgn == ft_strlen(s1))
+	while (is_in_set(s1[end], (char *)set) && end > 0)
+		end--;
+	if (bgn > end)
 	{
 		trimmed = (char *)malloc(sizeof(char) * 1);
 		if (trimmed == NULL)
 			return (NULL);
 		trimmed[0] = '\0';
+		return (trimmed);
 	}
 	else
 	{
-		trimmed = copy(s1, set, bgn, end);
+		trimmed = copy(s1, bgn, end);
 	}
 	return (trimmed);
 }
 
+static char	*rtn_null(void)
+{
+	char	*str;
 
-//				if (trimmed == NULL)
-			// return (NULL);
-//後ろからと前からを同時に見る、交差した時にNULLをリターンする
+	str = (char *)malloc(sizeof(char) * 1);
+	if (str == NULL)
+		return (NULL);
+	str[0] = '\0';
+	return (str);
+}
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
@@ -88,11 +95,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	s1_len = ft_strlen(s1);
 	if (s1_len == 0)
 	{
-		trimmed = (char *)malloc(sizeof(char) * 1);
-				if (trimmed == NULL)
-			return (NULL);
-		trimmed[0] = '\0';
-		return (trimmed);
+		return (rtn_null());
 	}
 	else if (set == NULL || ft_strlen(set) == 0)
 	{
@@ -108,12 +111,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (trimmed);
 	}
 }
-
-// #include <string.h>
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	char* s = ft_strtrim("123   ", " ");
-// 	printf("Trimmed is: '%s'\n", s);
-// }

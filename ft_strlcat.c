@@ -47,14 +47,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	copy_src_to_dst(dst, src, k, size);
 	return (k + ft_strlen(src));
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char dest[30];
-// 	memset(dest, 0, 30);
-// 	char *src = (char *)"AAAAAAAAA";
-// 	dest[0] = 'B';
-// 	printf("%zu", ft_strlcat(NULL, src, 0));
-// }

@@ -25,20 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-// #include <stdio.h>
-// void mon_toupper(unsigned int i, char *s)
-// {
-// 	if (97 <= *s && *s <= 122)
-//  	{
-//  		*s -= 32;
-//  	}
-// 	printf("La %de lettre: %c\n", i, *s);
-// }
-// int main()
-// {
-// 	puts("\nft_striteri-----\n");
-// 	char *s = "1234abcdefg";
-// 	ft_striteri(s, mon_toupper);
-// 	printf("%s\n", s);
-// }
