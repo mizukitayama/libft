@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtayama <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mtayama <mtayama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:48:50 by mtayama           #+#    #+#             */
-/*   Updated: 2022/10/18 17:14:51 by mtayama          ###   ########.fr       */
+/*   Updated: 2024/04/22 14:12:03 by mtayama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,3 +111,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (trimmed);
 	}
 }
+
+// #include <string.h>
+// #include <stdio.h>
+// int	main()
+// {
+// 	char* s = ft_strtrim("abcdba", "acb");
+// 	printf("Trimmed is: '%s'\n", s);
+// }

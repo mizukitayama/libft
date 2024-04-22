@@ -53,3 +53,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (copy_slice(s, start, len));
 	}
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	// char *str = ft_strdup("0123456789");
+// 	char *s = ft_substr("423245264", 2, 2);
+// 	printf("%s", s);
+// 	// char *str = "qweryth";
+// 	// size_t size = 2;
+// 	// printf("%s", ft_substr(str, 2, size));
+// }

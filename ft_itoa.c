@@ -88,3 +88,16 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	puts("\nft_itoa-----\n");
+
+// 	printf("%s\n", ft_itoa(-100));
+// 	printf("%s\n", ft_itoa(0));
+// 	printf("%s\n", ft_itoa(100));
+// 	printf("%s\n", ft_itoa(12345));
+// 	printf("%s\n\n", ft_itoa(2147483647));
+// 	printf("%s\n", ft_itoa(-12345));
+// }

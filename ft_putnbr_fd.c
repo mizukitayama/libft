@@ -42,3 +42,10 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	write_nbr(n, fd);
 }
+
+// int main()
+// {
+// 	int n1 = 10;
+// 	int fd = 1;
+// 	ft_putnbr_fd(n1, fd);
+// }

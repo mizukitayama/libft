@@ -48,3 +48,12 @@ void	*ft_memmove(void *buf1, const void *buf2, size_t n)
 	move_mem(buf1, buf2, n);
 	return (buf1);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char str[] = "helloworld";
+// 	printf("移動前：%s\n", str);
+// 	ft_memmove(str+3, str, 2);
+// 	printf("移動後：%s\n", str);
+// }

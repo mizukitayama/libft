@@ -22,3 +22,10 @@ void	ft_putstr_fd(char *s, int fd)
 	while (i-- > 0)
 		write(fd, (const void *)s++, 1);
 }
+
+// int main()
+// {
+// 	char *s = NULL;
+// 	int fd = 1;
+// 	ft_putstr_fd(s, fd);
+// }

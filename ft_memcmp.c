@@ -36,3 +36,15 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	}
 	return (0);
 }
+
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+// 	puts("\nft_memcmp-----\n");
+// 	printf("%d\n", ft_memcmp("ABC12\n567", "ABC12\n567", 7));
+// 	printf("%d\n", ft_memcmp("ABC12\n456", "ABC12\n567", 7));
+// 	printf("%d\n", memcmp("ABC12\n456", "ABC12\n567", 7));
+// 	printf("%d\n", ft_memcmp("ABC12\n956", "ABC12\n567", 6));
+// 	printf("%d\n", memcmp("ABC12\n956", "ABC12\n567", 6));
+// }
